@@ -72,7 +72,7 @@ const mouseleave = (dato) => {
 
 <template>
   <div>
-    <h2 class="  text-3xl mx-36 text-center my-8">
+    <h2 class=" pt-4 sm:text-sm md:text-3xl mx-36 text-gray-700 text-center my-8">
      Disfruta de esta coleccion de imagenes creadas por Stable Diffusion y compartida a traves de la API de <strong class="text-indigo-500"><a href="http://">lexica.art</a></strong> 
     </h2>
     <label
@@ -104,7 +104,7 @@ const mouseleave = (dato) => {
         v-model.lazy="username"
         type="search"
         id="search"
-        class=" block p-4 pl-10 w-full mr-2 text-3xl text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        class=" block p-4 pl-10 w-full mr-2 sm:text-sm md:text-3xl text-gray-500 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         placeholder="Buscas fotos realizadas por Stablediffusion"
         required
       />
@@ -123,14 +123,14 @@ const mouseleave = (dato) => {
           <LoadingStatus></LoadingStatus>
         </div>
         <div class="flex flex-wrap -m-1 md:-m-2">
-          <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-4">
+          <div class="mb-8 grid md:grid-cols-4 sm:grid-cols-2 gap-4">
             <div
-              v-for="(coleccion, index) in filtro.slice(0, 12)"
+              v-for="(coleccion, index) in filtro.slice(0, 100)"
               :key="index"
               class="p-1 md:p-2"
             >
               <router-link :to="`/galeria/${coleccion.id}`">
-                {{ coleccion.id }}
+              
                 <img
                   v-on:mouseover="mouseover(index, coleccion)"
                   v-on:mouseleave="mouseleave(index, coleccion)"
