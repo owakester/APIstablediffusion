@@ -3,12 +3,13 @@ import { ref, watch, computed, reactive } from "vue";
 import BrowserImage from "./BrowserImage.vue";
 import { useCounterStore } from "../stores/counter";
 import LoadingStatus from "./LoadingStatus.vue";
+import { RouterLink } from "vue-router";
 
 const useCounter = useCounterStore();
 const colecciones = ref([]);
 const filtro = ref([]);
 const animar = ref("");
-const load=ref(false);
+const load = ref(false);
 const animate = ref(
   `block object-cover object-center saturate-150 ... w-full h-full rounded-lg border `
 );
@@ -27,9 +28,9 @@ const username = ref(useCounter.inputFind);
 
 watch(username, (newUsername) => {
   filtro.value = [];
-  load.value=true
+  load.value = true;
   setTimeout(() => {
-    load.value=false
+    load.value = false;
     const url = ref(` https://lexica.art/api/v1/search?q=${username.value}`);
     console.log(url.value);
     fetch(url.value)
@@ -70,11 +71,11 @@ const mouseleave = (dato) => {
 </script>
 
 <template>
-
-
   <div>
-
-
+    <h2 class="w-1/2 text-3xl m-2 text-center">
+      Las mejores fotos de stock gratis, imágenes libres de regalías y vídeos
+      compartidos por creadores.
+    </h2>
     <label
       for="search"
       class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
@@ -105,7 +106,7 @@ const mouseleave = (dato) => {
         type="search"
         id="search"
         class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        placeholder="Search"
+        placeholder="Buscas fotos realizadas por Stablediffusion"
         required
       />
       <button
@@ -115,30 +116,30 @@ const mouseleave = (dato) => {
       >
         Search
       </button>
-
-      
     </div>
 
     <section class="overflow-hidden text-gray-700">
       <div class="container px-5 py-2 mx-auto lg:pt-12 lg:px-18">
-        
-        <div   v-if="load">
-          <LoadingStatus ></LoadingStatus>
+        <div v-if="load">
+          <LoadingStatus></LoadingStatus>
         </div>
         <div class="flex flex-wrap -m-1 md:-m-2">
-          <div class="grid md:grid-cols-4  sm:grid-cols-2 gap-4">
+          <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-4">
             <div
-              v-for="(coleccion, index) in filtro.slice(0,12)"
+              v-for="(coleccion, index) in filtro.slice(0, 12)"
               :key="index"
               class="p-1 md:p-2"
             >
-              <img
-                v-on:mouseover="mouseover(index, coleccion)"
-                v-on:mouseleave="mouseleave(index, coleccion)"
-                alt="gallery"
-                :class="coleccion.animar"
-                :src="coleccion.src"
-              />
+              <router-link :to="`/galeria/${coleccion.id}`">
+                {{ coleccion.id }}
+                <img
+                  v-on:mouseover="mouseover(index, coleccion)"
+                  v-on:mouseleave="mouseleave(index, coleccion)"
+                  @click="useCounter.getData(coleccion)"
+                  alt="gallery"
+                  :class="coleccion.animar"
+                  :src="coleccion.src"
+              /></router-link>
             </div>
           </div>
         </div>

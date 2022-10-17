@@ -6,6 +6,15 @@ export const useCounterStore = defineStore('counter', () => {
   const filtro=ref([])
   const inputFind = ref("");
   const doubleCount = computed(() => count.value * 2)
+  const info=ref({})
+  
+  
+  const getData=(dato)=>{
+
+info.value=dato
+
+
+  }
   function increment() {
     count.value++
   }
@@ -33,5 +42,5 @@ const resizeImage = (data) => {
 
   
 
-  return { count, doubleCount, increment, filtro,inputFind }
+  return { count, doubleCount, increment, filtro,inputFind,getData,info}
 })
