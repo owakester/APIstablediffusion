@@ -3,10 +3,12 @@
     <header class="mx-4" >
       <img
         alt="Vue logo"
-        class="flex items-center object-fill h-80 w-screen  md:mx-4 rounded-t-2xl " 
-        src="https://images.pexels.com/photos/97077/pexels-photo-97077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        class="flex items-center object-fill h-80 w-screen  md:mx-4 rounded-t-2xl opacity-40 " 
+        src="https://cdn.pixabay.com/photo/2018/09/27/09/22/web-3706563_960_720.jpg"
       />
 
+<!--       <h3>Galeria</h3>
+ -->
       <Disclosure as="nav" class="bg-gray-800  md:mx-4 w-full" v-slot="{ open }">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div class="relative flex h-16 items-center justify-between">

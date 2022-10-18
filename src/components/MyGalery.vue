@@ -80,7 +80,7 @@ const mouseleave = (dato) => {
       class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
       >Your Email</label
     >
-    <div class="relative">
+    <div class="relative  ">
       <div
         class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
       >
