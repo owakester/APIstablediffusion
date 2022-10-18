@@ -72,7 +72,7 @@ const mouseleave = (dato) => {
 
 <template>
   <div>
-    <h2 class=" pt-4 sm:text-sm md:text-3xl mx-36 text-gray-700 text-center my-8">
+    <h2 class=" pt-4 sm:text-sm md:text-3xl md:mx-36 text-gray-700 text-center my-8">
      Disfruta de esta coleccion de imagenes creadas por Stable Diffusion y compartida a traves de la API de <strong class="text-indigo-500"><a href="http://">lexica.art</a></strong> 
     </h2>
     <label
