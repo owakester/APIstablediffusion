@@ -76,11 +76,7 @@
                     class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                   >
                     <span class="sr-only">Open user menu</span>
-                    <img
-                      class="h-8 w-8 rounded-full"
-                      src="perfil.jpg"
-                      alt=""
-                    />
+                    
                   </MenuButton>
                 </div>
                 <transition
