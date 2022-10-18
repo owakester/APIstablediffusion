@@ -111,10 +111,11 @@ const mouseleave = (dato) => {
       <button
         @click="fetchData"
         type="submit"
-        class="text-white absolute right-2.5 bottom-2.5 bg-indigo-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="text-white  sm:text-sm md:text-xl  absolute right-2.5 bottom-2.5 bg-gray-500 hover:bg-indigo-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-3 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       >
         Search
       </button>
+      
     </div>
 
     <section class="overflow-hidden text-gray-700">

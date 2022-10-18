@@ -1,13 +1,13 @@
 <template>
   <div>
-    <header m-18>
+    <header class="mx-4" >
       <img
         alt="Vue logo"
-        class="flex items-center object-fill h-96 w-screen mx-auto rounded-t-2xl"
+        class="flex items-center object-fill h-80 w-screen mx-4 rounded-t-2xl" 
         src="https://images.pexels.com/photos/97077/pexels-photo-97077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       />
 
-      <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
+      <Disclosure as="nav" class="bg-gray-800  mx-4 w-full" v-slot="{ open }">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">

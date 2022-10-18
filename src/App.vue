@@ -8,7 +8,7 @@ import HeaderView from './components/HeaderView.vue'
   <header >
 <!--     <img alt="Vue logo" class="logo " src="https://images.pexels.com/photos/2864763/pexels-photo-2864763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  />
  -->
-    <div class="wrapper">
+    <div class="container mx-auto "  >
       <HelloWorld msg="You did it!" />
       <nav>
       <HeaderView></HeaderView>
