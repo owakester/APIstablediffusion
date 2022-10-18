@@ -163,7 +163,7 @@ fin.value=fin.value-nImages.value
  <h3 class=" sm:text-sm md:text-3xl mx-36 text-gray-700 text-center my-8">Mi colección de fotos</h3>
  <p class=" sm:text-sm md:text-xl mx-36 text-gray-700 text-center my-8">Recopilacion de imagenes creadas por Stable Diffusion version GUI - NMKD</p>
   <div>
-  <ul  class="grid  sm:grid-cols-2 md:grid-cols-4 gap-4 m-4 ">
+  <ul  class="grid  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4  gap-4 m-4 ">
       <li  v-for="picture in myPicture.slice(ini,fin)"><img class="rounded-md  shadow-md h-96 w-96" :src="picture.url" alt=""></li>
   </ul>
 
