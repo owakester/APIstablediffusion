@@ -5,7 +5,7 @@
     import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/vue/24/outline";
 
 const myPicture = [
-  { id: 1, url: "	https://i.ibb.co/4KJ9Z7h/actus.jpg	" },
+  { id: 1, url: "	https://i.ibb.co/z6x9SfV/actus.png	" },
   {
     id: 2,
     url: "	https://i.ibb.co/PrGWMmM/2022-10-06-23-44-38-1-549398058-scale10-00-k-euler-a-1.jpg	",
@@ -37,11 +37,11 @@ const myPicture = [
   },
   {
     id: 9,
-    url: "	https://i.ibb.co/CWVph0h/2022-10-04-20-49-19-07-1673147236-scale11-00-k-euler-a-07.png	",
+    url: "	https://i.ibb.co/m5V5hnw/2022-10-04-20-49-19-07-1673147236-scale11-00-k-euler-a-07.jpg	",
   },
   {
     id: 10,
-    url: "	https://i.ibb.co/xChJ1hP/2022-10-04-20-38-25-01-1673147231-scale11-00-k-euler-a-01.png	",
+    url: "	https://i.ibb.co/NsmVCDx/2022-10-04-20-38-25-01-1673147231-scale11-00-k-euler-a-01.jpg	",
   },
   {
     id: 11,
