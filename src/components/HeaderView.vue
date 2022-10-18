@@ -1,66 +1,175 @@
 <template>
   <div>
-    <header class="ml-8">
+    <header m-18>
       <img
         alt="Vue logo"
         class="flex items-center object-fill h-96 w-screen mx-auto rounded-t-2xl"
         src="https://images.pexels.com/photos/97077/pexels-photo-97077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       />
-     
 
-      <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
-        <div class="container flex flex-wrap justify-between items-center mx-auto">
-          <a href="https://flowbite.com/" class="flex items-center">
-              <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
-              <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-          </a>
-          <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-          </button>
-          <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <li>
-                <RouterLink
-                href="#"
-                class="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                to="/"
-                >Home</RouterLink
+      <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <!-- Mobile menu button-->
+              <DisclosureButton
+                class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               >
-              </li>
-              <li>
-                <RouterLink
-                href="#"
-                class="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                to="about"
-                >About</RouterLink
-              >              </li>
-              <li>
-                <RouterLink
-                href="#"
-                class="text-gray-00 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                to="galeria"
-                >Galeria</RouterLink>
-              </li>
-             
-            </ul>
+                <span class="sr-only">Open main menu</span>
+                <Bars3Icon
+                  v-if="!open"
+                  class="block h-6 w-6"
+                  aria-hidden="true"
+                />
+                <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" />
+              </DisclosureButton>
+            </div>
+            <div
+              class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+            >
+              <div class="flex flex-shrink-0 items-center">
+                <img
+                  class="block h-8 w-auto lg:hidden"
+                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                  alt="Your Company"
+                />
+                <img
+                  class="hidden h-8 w-auto lg:block"
+                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                  alt="Your Company"
+                />
+              </div>
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+                  <RouterLink
+                    v-for="item in navigation"
+                    :to="item.go"
+                    :key="item.name"
+                    :href="item.href"
+                    :class="[
+                      item.current
+                        ? 'bg-gray-900 text-white'
+                        : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                      'px-3 py-2 rounded-md text-sm font-medium',
+                    ]"
+                    :aria-current="item.current ? 'page' : undefined"
+                    >{{ item.name }}</RouterLink
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+            >
+              <button
+                type="button"
+                class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              >
+                <span class="sr-only">View notifications</span>
+                <BellIcon class="h-6 w-6" aria-hidden="true" />
+              </button>
+
+              <!-- Profile dropdown -->
+              <Menu as="div" class="relative ml-3">
+                <div>
+                  <MenuButton
+                    class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  >
+                    <span class="sr-only">Open user menu</span>
+                    <img
+                      class="h-8 w-8 rounded-full"
+                      src="perfil.jpg"
+                      alt=""
+                    />
+                  </MenuButton>
+                </div>
+                <transition
+                  enter-active-class="transition ease-out duration-100"
+                  enter-from-class="transform opacity-0 scale-95"
+                  enter-to-class="transform opacity-100 scale-100"
+                  leave-active-class="transition ease-in duration-75"
+                  leave-from-class="transform opacity-100 scale-100"
+                  leave-to-class="transform opacity-0 scale-95"
+                >
+                  <MenuItems
+                    class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  >
+                    <MenuItem v-slot="{ active }">
+                      <a
+                        href="#"
+                        :class="[
+                          active ? 'bg-gray-100' : '',
+                          'block px-4 py-2 text-sm text-gray-700',
+                        ]"
+                        >Your Profile</a
+                      >
+                    </MenuItem>
+                    <MenuItem v-slot="{ active }">
+                      <a
+                        href="#"
+                        :class="[
+                          active ? 'bg-gray-100' : '',
+                          'block px-4 py-2 text-sm text-gray-700',
+                        ]"
+                        >Settings</a
+                      >
+                    </MenuItem>
+                    <MenuItem v-slot="{ active }">
+                      <a
+                        href="#"
+                        :class="[
+                          active ? 'bg-gray-100' : '',
+                          'block px-4 py-2 text-sm text-gray-700',
+                        ]"
+                        >Sign out</a
+                      >
+                    </MenuItem>
+                  </MenuItems>
+                </transition>
+              </Menu>
+            </div>
           </div>
         </div>
-      </nav>
 
-
-
-
-
-
-
-
-
-
+        <DisclosurePanel class="sm:hidden">
+          <div class="space-y-1 px-2 pt-2 pb-3">
+            <DisclosureButton
+              v-for="item in navigation"
+              :key="item.name"
+              as="a"
+              :href="item.href"
+              :class="[
+                item.current
+                  ? 'bg-gray-900 text-white'
+                  : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                'block px-3 py-2 rounded-md text-base font-medium',
+              ]"
+              :aria-current="item.current ? 'page' : undefined"
+              >{{ item.name }}</DisclosureButton
+            >
+          </div>
+        </DisclosurePanel>
+      </Disclosure>
     </header>
   </div>
 </template>
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+} from "@headlessui/vue";
+import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/vue/24/outline";
+
+const navigation = [
+  { name: "Home", href: "#", current: true, go: "/" },
+ /*  { name: "About", href: "#", current: false, go: "about" }, */
+  { name: "Galeria", href: "#", current: false, go: "galeria" },
+];
 </script>

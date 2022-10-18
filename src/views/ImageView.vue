@@ -36,5 +36,11 @@ console.log(useCounter.info)
   
 </div>
 
-<button class="bg-indigo-500">Volver</button>
+<button class="bg-indigo-500 rounded p-2 text-gray-100 mx-12 mb-12 ">Volver</button>
+
+<RouterLink
+href="#"
+class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+to="/"
+>volver</RouterLink>
 </template>
