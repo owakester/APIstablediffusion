@@ -3,13 +3,11 @@
     <header class="mx-4" >
       <img
         alt="Vue logo"
-        class="flex items-center object-fill md:h-64 sm:h-20  w-screen  md:mx-4 rounded-t-2xl opacity-40 " 
-        src="https://cdn.pixabay.com/photo/2018/09/27/09/22/web-3706563_960_720.jpg"
+        class="flex items-center object-fill h-80 w-screen mx-4 rounded-t-2xl" 
+        src="https://images.pexels.com/photos/97077/pexels-photo-97077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       />
 
-<!--       <h3>Galeria</h3>
- -->
-      <Disclosure as="nav" class="bg-gray-800  md:mx-4 w-full" v-slot="{ open }">
+      <Disclosure as="nav" class="bg-gray-800  mx-4 w-full" v-slot="{ open }">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -31,13 +29,13 @@
             >
               <div class="flex flex-shrink-0 items-center">
                 <img
-                  class="block h-12 w-auto rounded-full lg:hidden"
-                  src="https://i.ibb.co/CmKKjTC/logo.png"
+                  class="block h-8 w-auto lg:hidden"
+                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                   alt="Your Company"
                 />
                 <img
-                  class="hidden h-12 w-auto rounded-full lg:block"
-                  src="https://i.ibb.co/CmKKjTC/logo.png "
+                  class="hidden h-8 w-auto lg:block"
+                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                   alt="Your Company"
                 />
               </div>
@@ -63,7 +61,13 @@
             <div
               class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
             >
-        
+              <button
+                type="button"
+                class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              >
+                <span class="sr-only">View notifications</span>
+                <BellIcon class="h-6 w-6" aria-hidden="true" />
+              </button>
 
               <!-- Profile dropdown -->
               <Menu as="div" class="relative ml-3">
