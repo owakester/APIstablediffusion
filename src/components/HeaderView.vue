@@ -32,12 +32,12 @@
               <div class="flex flex-shrink-0 items-center">
                 <img
                   class="block h-12 w-auto rounded-full lg:hidden"
-                  src="logo.png "
+                  src="https://i.ibb.co/CmKKjTC/logo.png"
                   alt="Your Company"
                 />
                 <img
                   class="hidden h-12 w-auto rounded-full lg:block"
-                 src="logo.png "
+                  src="https://i.ibb.co/CmKKjTC/logo.png "
                   alt="Your Company"
                 />
               </div>
