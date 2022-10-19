@@ -3,7 +3,7 @@
     <header class="mx-4" >
       <img
         alt="Vue logo"
-        class="flex items-center object-fill h-80 w-screen  md:mx-4 rounded-t-2xl opacity-40 " 
+        class="flex items-center object-fill md:h-64 sm:h-20  w-screen  md:mx-4 rounded-t-2xl opacity-40 " 
         src="https://cdn.pixabay.com/photo/2018/09/27/09/22/web-3706563_960_720.jpg"
       />
 
@@ -31,13 +31,13 @@
             >
               <div class="flex flex-shrink-0 items-center">
                 <img
-                  class="block h-8 w-auto lg:hidden"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                  class="block h-12 w-auto rounded-full lg:hidden"
+                  src="logo.png "
                   alt="Your Company"
                 />
                 <img
-                  class="hidden h-8 w-auto lg:block"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                  class="hidden h-12 w-auto rounded-full lg:block"
+                 src="logo.png "
                   alt="Your Company"
                 />
               </div>
@@ -63,13 +63,7 @@
             <div
               class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
             >
-              <button
-                type="button"
-                class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-              >
-                <span class="sr-only">View notifications</span>
-                <BellIcon class="h-6 w-6" aria-hidden="true" />
-              </button>
+        
 
               <!-- Profile dropdown -->
               <Menu as="div" class="relative ml-3">
@@ -168,6 +162,6 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/vue/24/outline";
 const navigation = [
   { name: "Home", href: "#", current: true, go: "/" },
  /*  { name: "About", href: "#", current: false, go: "about" }, */
-  { name: "Galeria", href: "#", current: false, go: "galeria" },
+  { name: "About", href: "#", current: false, go: "about" },
 ];
 </script>
