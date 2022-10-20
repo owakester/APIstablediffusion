@@ -6,13 +6,7 @@ import { useCounterStore } from "../stores/counter";
 const useCounter = useCounterStore();
 
 const route=useRoute()
-/* const getData=async()=>{
-    await fetch(`https://lexica.art/api/v1/search?q=${route.params.id}`)
-.then (response => response.json())
-.then (data => console.log(data))
-}
-getData() */
-console.log(useCounter.info)
+
 </script>
 
 

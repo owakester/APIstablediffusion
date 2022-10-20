@@ -32,7 +32,7 @@ watch(username, (newUsername) => {
   setTimeout(() => {
     load.value = false;
     const url = ref(` https://lexica.art/api/v1/search?q=${username.value}`);
-    console.log(url.value);
+    
     fetch(url.value)
       .then((response) => response.json())
       .then((data) => resizeImage(data.images));
